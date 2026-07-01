@@ -1,0 +1,53 @@
+/* =========================================================================
+   Page transitions — View Transitions API (Level 2 MPA)
+   Keyframe values (direction + angle) are injected dynamically by JS so
+   diagonal routes slide at the true angle between pages, not snapped to
+   a cardinal direction.
+   ========================================================================= */
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
+/* Cancel the browser's default cross-fade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* vt-exit / vt-enter / vt-sliver-enter keyframes are written inline by JS
+   with the exact translate values for the current navigation direction */
+html.vt-active::view-transition-old(root) {
+  animation: vt-exit  750ms cubic-bezier(0.65, 0, 0.2, 1) both;
+}
+html.vt-active::view-transition-new(root) {
+  animation: vt-enter 750ms cubic-bezier(0.65, 0, 0.2, 1) both;
+}
+
+/* Sliver is captured independently so it can enter from its own edge */
+.sliver {
+  view-transition-name: sliver;
+}
+
+::view-transition-old(sliver),
+::view-transition-new(sliver) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@keyframes vt-sliver-exit { to { opacity: 0; } }
+
+/* Sliver fades out quickly before the page slides away */
+html.vt-active::view-transition-old(sliver) {
+  animation: vt-sliver-exit 180ms ease both;
+}
+
+/* Sliver enters from its edge after the main page has settled */
+html.vt-active::view-transition-new(sliver) {
+  animation: vt-sliver-enter 500ms cubic-bezier(0.65, 0, 0.2, 1) 400ms both;
+}
