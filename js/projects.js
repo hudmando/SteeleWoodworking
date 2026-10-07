@@ -89,6 +89,22 @@
         'images/bread%20boxes/IMG_4294%20(3).jpg',
         'images/bread%20boxes/IMG_4293.jpg'
       ]
+    },
+    {
+      title: 'Tenon and Mortised Maple End Table',
+      desc: 'A solid maple end table built around through mortise-and-tenon joinery. Every rail passes clean through its leg and is locked with a pair of wedges, left exposed as the defining detail of the piece. The joints were laid out and fit by hand with a Japanese pull saw and chisels, and the top is a glued-up maple panel that keeps its natural checks and character.',
+      photos: [
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(1).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(2).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(3).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(4).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(5).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(6).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(7).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(8).jpg',
+        'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(9).jpg'
+      ],
+      positions: ['center 55%', 'center 45%', 'center 55%', 'center 45%', null, null, null, null, null]
     }
   ];
 
