@@ -105,6 +105,28 @@
         'images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(9).jpg'
       ],
       positions: ['center 55%', 'center 45%', 'center 55%', 'center 45%', null, null, null, null, null]
+    },
+    {
+      title: 'Walnut Bar Stools',
+      desc: 'A set of walnut bar stools, currently in progress, modeled after the stools of KOMA, the Japanese furniture maker. Each frame is built entirely with mortise-and-tenon joinery. The legs are coved along their inside faces, and the aprons sweep down into shaped shoulders where they meet the legs. The parts were milled and fit with Japanese chisels and hand planes, then glued up one stool at a time.',
+      photos: [
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(1).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(2).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(3).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(4).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(5).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(6).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(7).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(8).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(9).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(10).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(11).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(12).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(13).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(14).jpg',
+        'images/walnut%20bar%20stools/walnut%20bar%20stools%20(15).jpg'
+      ],
+      positions: ['center 30%', 'center 55%', null, null, null, null, null, null, null, null, null, null, null, null, null]
     }
   ];
 
