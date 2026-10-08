@@ -107,12 +107,12 @@
       positions: ['center 55%', 'center 45%', 'center 55%', 'center 45%', null, null, null, null, null]
     },
     {
-      title: 'Black Walnut Slab Coffee Table',
+      title: 'Square Walnut Coffee Table',
       desc: 'A low coffee table made from a single live-edge slab of black walnut on slim black hairpin legs. Both long edges keep their natural curve, and the slab\'s cool notches and open checks are left as they came from the tree. A clear finish deepens the walnut and lets the grain carry the piece.',
       photos: [
-        'images/black%20walnut%20slab%20coffee%20table/black%20walnut%20slab%20coffee%20table%20(1).jpg',
-        'images/black%20walnut%20slab%20coffee%20table/black%20walnut%20slab%20coffee%20table%20(2).jpg',
-        'images/black%20walnut%20slab%20coffee%20table/black%20walnut%20slab%20coffee%20table%20(3).jpg'
+        'images/square%20walnut%20coffee%20table/square%20walnut%20coffee%20table%20(1).jpg',
+        'images/square%20walnut%20coffee%20table/square%20walnut%20coffee%20table%20(2).jpg',
+        'images/square%20walnut%20coffee%20table/square%20walnut%20coffee%20table%20(3).jpg'
       ]
     },
     {
