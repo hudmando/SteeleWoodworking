@@ -11,14 +11,37 @@
      page's HTML. CSS picks up the rest automatically.
    ========================================================================= */
 
+/* ---------- Design tokens ----------------------------------------------
+   Every shared dimension and colour is defined once here; the mobile block
+   at the bottom re-declares the few that shrink on small screens. */
+:root {
+  --ink:        #000;
+  --ink-body:   #222;
+  --ink-muted:  #555;
+  --paper:      #fff;
+
+  --sliver:          60px;                    /* sliver thickness */
+  --sliver-gap:      30px;                    /* breathing room past the sliver */
+  --hero-sliver-pad: 120px;                   /* hero padding on the sliver edge */
+  --gutter:          clamp(24px, 5vw, 60px);  /* content side padding */
+  --grid-inset:      75px;                    /* Home grid inset from the viewport */
+  --sliver-inset-v:  clamp(0px, 8vh, 75px);   /* left/right sliver grid inset */
+  --sliver-inset-h:  clamp(0px, 8vw, 75px);   /* top/bottom sliver grid inset */
+  --grid-ratio:      calc(5 / 3);             /* grid.svg viewBox 1000 x 600 */
+  --projects-max:    1100px;                  /* widest the projects grid gets */
+
+  /* side padding that keeps content clear of a left/right sliver */
+  --sliver-clearance: calc(var(--gutter) + var(--sliver) + var(--sliver-gap));
+}
+
 /* ---------- Reset & base ------------------------------------------------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-  background: #fff;
-  color: #000;
+  background: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -32,20 +55,20 @@ body {
   font-size: clamp(2.5rem, 6vw, 5rem);
   letter-spacing: 0.01em;
   line-height: 1;
-  color: #000;
+  color: var(--ink);
 }
 
 .page__tagline {
   font-weight: 300;
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  color: #555;
+  color: var(--ink-muted);
   margin-top: 0.75rem;
 }
 
 .page__nav {
   font-weight: 400;
   font-size: clamp(1.1rem, 1.75vw, 1.5rem);
-  color: #000;
+  color: var(--ink);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -81,10 +104,10 @@ body {
 /* ---------- Centered grid (Home only) ----------------------------------- */
 .hero__grid {
   position: absolute;
-  top: 75px;
-  left: 75px;
-  width: calc(100% - 150px);
-  height: calc(100% - 150px);
+  top: var(--grid-inset);
+  left: var(--grid-inset);
+  width: calc(100% - 2 * var(--grid-inset));
+  height: calc(100% - 2 * var(--grid-inset));
   pointer-events: none;
   z-index: 0;
 }
@@ -105,37 +128,37 @@ body {
 }
 
 /* =========================================================================
-   SLIVER — the 30px peek of the box from the page you came from.
-   Always clickable, always returns to home. Position depends on data-camera.
+   SLIVER — a peek at the edge of the Home box, on the side Home lies in.
+   Always clickable, always returns to Home. Position depends on data-camera;
+   its transition name is set per edge in css/transitions.css.
    ========================================================================= */
 .sliver {
   position: fixed;
-  background: #fff;
+  background: var(--paper);
   z-index: 5;
   cursor: pointer;
   display: block;
   text-decoration: none;
+  overflow: hidden;
   /* Sliver is announced by aria-label, but visually quiet. */
 }
 
-.sliver:hover .sliver__svg { opacity: 0.7; }
+.sliver:hover .sliver__grid { opacity: 0.7; }
 
 /* ----- Camera moved LEFT (About): box is to our right → right-edge sliver */
 [data-camera="left"] .sliver {
   top: 0;
   right: 0;
-  width: 60px;
+  width: var(--sliver);
   height: 100vh;
-  overflow: hidden;
 }
 
 /* ----- Camera moved RIGHT (Projects): box is to our left → left-edge sliver */
 [data-camera="right"] .sliver {
   top: 0;
   left: 0;
-  width: 60px;
+  width: var(--sliver);
   height: 100vh;
-  overflow: hidden;
 }
 
 /* ----- Camera moved DOWN (Create): box is above us → top-edge sliver */
@@ -143,8 +166,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  overflow: hidden;
+  height: var(--sliver);
 }
 
 /* ----- Camera moved UP (reserved for future top-page): box is below us → bottom-edge sliver */
@@ -152,21 +174,34 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  overflow: hidden;
+  height: var(--sliver);
 }
 
-/* SVG sliver — hero__grid cropped to show only the relevant edge */
-.sliver__svg {
+/* Sliver grid — images/grid.svg at Home's size, cropped by the sliver box
+   so only the relevant edge shows */
+.sliver__grid {
   position: absolute;
   pointer-events: none;
   display: block;
 }
 
-[data-camera="right"] .sliver__svg { top: clamp(0px, 8vh, 75px); right: 0; left: auto; height: calc(100vh - 2 * clamp(0px, 8vh, 75px)); width: calc((100vh - 2 * clamp(0px, 8vh, 75px)) * 5 / 3); }
-[data-camera="left"]  .sliver__svg { top: clamp(0px, 8vh, 75px); left: 0; right: auto; height: calc(100vh - 2 * clamp(0px, 8vh, 75px)); width: calc((100vh - 2 * clamp(0px, 8vh, 75px)) * 5 / 3); }
-[data-camera="down"]  .sliver__svg { bottom: 0; top: auto; left: clamp(0px, 8vw, 75px); width: calc(100vw - 2 * clamp(0px, 8vw, 75px)); height: calc((100vw - 2 * clamp(0px, 8vw, 75px)) * 3 / 5); }
-[data-camera="up"]    .sliver__svg { top: 0; bottom: auto; left: clamp(0px, 8vw, 75px); width: calc(100vw - 2 * clamp(0px, 8vw, 75px)); height: calc((100vw - 2 * clamp(0px, 8vw, 75px)) * 3 / 5); }
+[data-camera="left"]  .sliver__grid,
+[data-camera="right"] .sliver__grid {
+  top: var(--sliver-inset-v);
+  height: calc(100vh - 2 * var(--sliver-inset-v));
+  width: calc((100vh - 2 * var(--sliver-inset-v)) * var(--grid-ratio));
+}
+[data-camera="right"] .sliver__grid { right: 0; }
+[data-camera="left"]  .sliver__grid { left: 0; }
+
+[data-camera="down"] .sliver__grid,
+[data-camera="up"]   .sliver__grid {
+  left: var(--sliver-inset-h);
+  width: calc(100vw - 2 * var(--sliver-inset-h));
+  height: calc((100vw - 2 * var(--sliver-inset-h)) / var(--grid-ratio));
+}
+[data-camera="down"] .sliver__grid { bottom: 0; }
+[data-camera="up"]   .sliver__grid { top: 0; }
 
 /* Return arrow — sits inside sliver near inner edge, slides to center on hover */
 .sliver::after {
@@ -184,8 +219,8 @@ body {
 
 /* Projects (←): rests near right edge of left sliver */
 [data-camera="right"] .sliver::after {
-  border-top: 4px solid #000;
-  border-left: 4px solid #000;
+  border-top: 4px solid var(--ink);
+  border-left: 4px solid var(--ink);
   transform: translate(calc(-50% + 16px), -50%) rotate(-45deg);
 }
 [data-camera="right"] .sliver:hover::after {
@@ -195,8 +230,8 @@ body {
 
 /* About (→): rests near left edge of right sliver */
 [data-camera="left"] .sliver::after {
-  border-top: 4px solid #000;
-  border-right: 4px solid #000;
+  border-top: 4px solid var(--ink);
+  border-right: 4px solid var(--ink);
   transform: translate(calc(-50% - 16px), -50%) rotate(45deg);
 }
 [data-camera="left"] .sliver:hover::after {
@@ -206,8 +241,8 @@ body {
 
 /* Create (↑): rests near bottom edge of top sliver */
 [data-camera="down"] .sliver::after {
-  border-top: 4px solid #000;
-  border-left: 4px solid #000;
+  border-top: 4px solid var(--ink);
+  border-left: 4px solid var(--ink);
   transform: translate(-50%, calc(-50% + 16px)) rotate(45deg);
 }
 [data-camera="down"] .sliver:hover::after {
@@ -233,10 +268,10 @@ body {
 }
 
 /* nudge content away from the sliver so visuals breathe */
-[data-camera="left"]  .hero { padding-right: 120px; }
-[data-camera="right"] .hero { padding-left:  120px; }
-[data-camera="down"]  .hero { padding-top:    120px; }
-[data-camera="up"]    .hero { padding-bottom: 120px; }
+[data-camera="left"]  .hero { padding-right:  var(--hero-sliver-pad); }
+[data-camera="right"] .hero { padding-left:   var(--hero-sliver-pad); }
+[data-camera="down"]  .hero { padding-top:    var(--hero-sliver-pad); }
+[data-camera="up"]    .hero { padding-bottom: var(--hero-sliver-pad); }
 
 /* =========================================================================
    CONTENT SECTIONS — what sits below the hero on inner pages
@@ -245,14 +280,14 @@ body {
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
-  padding: clamp(60px, 8vw, 120px) clamp(24px, 5vw, 60px);
+  padding: clamp(60px, 8vw, 120px) var(--gutter);
 }
 
 .content__lede {
   font-size: clamp(1.25rem, 1.75vw, 1.5rem);
   font-weight: 300;
   line-height: 1.5;
-  color: #222;
+  color: var(--ink-body);
   margin-bottom: 3rem;
   max-width: 60ch;
 }
@@ -261,27 +296,27 @@ body {
   font-weight: 600;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   margin: 3rem 0 1rem;
-  color: #000;
+  color: var(--ink);
 }
 
 .content__body {
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: #222;
+  color: var(--ink-body);
   max-width: 65ch;
 }
 
 .content__body + .content__body { margin-top: 1.25rem; }
 
-/* shift content nudge for left/right cameras to keep sliver in view */
-[data-camera="left"]  .content { padding-right: calc(clamp(24px, 5vw, 60px) + 90px); }
-[data-camera="right"] .content { padding-left:  calc(clamp(24px, 5vw, 60px) + 90px); }
+/* keep content clear of a left/right sliver */
+[data-camera="left"]  .content { padding-right: var(--sliver-clearance); }
+[data-camera="right"] .content { padding-left:  var(--sliver-clearance); }
 
-/* mirror the sliver offset on the opposite side so content looks centered on desktop */
+/* mirror the clearance on the opposite side so content looks centred on desktop */
 @media (min-width: 641px) {
-  [data-camera="left"]  .content { padding-left:  calc(clamp(24px, 5vw, 60px) + 90px); }
-  [data-camera="right"] .content { padding-right: calc(clamp(24px, 5vw, 60px) + 90px); }
+  [data-camera="left"]  .content { padding-left:  var(--sliver-clearance); }
+  [data-camera="right"] .content { padding-right: var(--sliver-clearance); }
 }
 
 /* =========================================================================
@@ -299,7 +334,7 @@ body {
    window, stopping short of the sliver; text column keeps its width */
 @media (min-width: 641px) {
   .projects-grid {
-    --grid-w: min(1100px, calc(100vw - 2 * (clamp(24px, 5vw, 60px) + 90px)));
+    --grid-w: min(var(--projects-max), calc(100vw - 2 * var(--sliver-clearance)));
     width: var(--grid-w);
     margin-left: calc((100% - var(--grid-w)) / 2);
   }
@@ -324,9 +359,7 @@ body {
 
 .project-tile:hover { transform: translateY(-2px); }
 
-/* =========================================================================
-   PROJECT PANEL — vertical right-side sheet revealing project detail
-   ========================================================================= */
+/* tiles are <button>s (rendered by js/projects.js); strip native styling */
 button.project-tile {
   -webkit-appearance: none;
   appearance: none;
@@ -336,20 +369,23 @@ button.project-tile {
   font-family: inherit;
 }
 
+/* =========================================================================
+   PROJECT PANEL — vertical right-side sheet revealing project detail
+   ========================================================================= */
 .project-panel {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 50vw;
-  background: #fff;
+  background: var(--paper);
   z-index: 21;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  border-left: 2px solid #000;
+  border-left: 2px solid var(--ink);
 }
 
 .project-panel.is-open { transform: translateX(0); }
@@ -368,7 +404,7 @@ button.project-tile {
 .project-panel__header {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: var(--paper);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -381,7 +417,7 @@ button.project-tile {
 .project-panel__title {
   font-weight: 600;
   font-size: clamp(1.1rem, 1.75vw, 1.5rem);
-  color: #000;
+  color: var(--ink);
   margin: 0;
 }
 
@@ -401,7 +437,7 @@ button.project-tile {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: #000;
+  background: var(--ink);
   top: 50%;
   left: 0;
   margin-top: -1px;
@@ -474,14 +510,14 @@ button.project-tile {
 .project-panel__nav:hover span { opacity: 1; }
 
 .project-panel__nav--prev span {
-  border-left: 2px solid #000;
-  border-top: 2px solid #000;
+  border-left: 2px solid var(--ink);
+  border-top: 2px solid var(--ink);
   transform: rotate(-45deg) translate(2px, 0);
 }
 
 .project-panel__nav--next span {
-  border-right: 2px solid #000;
-  border-top: 2px solid #000;
+  border-right: 2px solid var(--ink);
+  border-top: 2px solid var(--ink);
   transform: rotate(45deg) translate(-2px, 0);
 }
 
@@ -489,7 +525,7 @@ button.project-tile {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.7;
-  color: #222;
+  color: var(--ink-body);
   padding: 1.75rem clamp(20px, 4vw, 48px) 3rem;
   margin: 0;
 }
@@ -541,7 +577,7 @@ button.project-tile {
   font-weight: 500;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #000;
+  color: var(--ink);
 }
 
 .process-step__body {
@@ -552,34 +588,25 @@ button.project-tile {
 }
 
 /* =========================================================================
-   MOBILE — simplified sliver, single-column grids, smaller hero padding
+   MOBILE — slimmer sliver, two-column grid, smaller hero padding
    ========================================================================= */
 @media (max-width: 640px) {
 
-  /* Hide full hero grid on mobile — replaced by sliver alone */
-  [data-camera="left"]  .hero__grid,
-  [data-camera="right"] .hero__grid,
-  [data-camera="down"]  .hero__grid,
-  [data-camera="up"]    .hero__grid {
-    display: none;
+  /* Slimmer sliver and tighter clearances; every rule built on these
+     tokens (sliver, hero padding, content clearance) follows automatically */
+  :root {
+    --sliver:          40px;
+    --sliver-gap:      10px;
+    --hero-sliver-pad: 70px;
   }
 
   .hero { padding: clamp(40px, 8vw, 80px) clamp(24px, 6vw, 40px); }
 
-  /* Slimmer slivers + fewer ticks read better at small sizes */
-  [data-camera="left"]  .sliver,
-  [data-camera="right"] .sliver { width: 40px; }
-  [data-camera="down"]  .sliver,
-  [data-camera="up"]    .sliver { height: 40px; }
-
-  /* Inner-page padding shrinks too */
-  [data-camera="left"]  .hero { padding-right: 70px; }
-  [data-camera="right"] .hero { padding-left:  70px; }
-  [data-camera="down"]  .hero { padding-top:   70px; }
-  [data-camera="up"]    .hero { padding-bottom:70px; }
-
-  [data-camera="left"]  .content { padding-right: calc(clamp(24px, 5vw, 60px) + 50px); }
-  [data-camera="right"] .content { padding-left:  calc(clamp(24px, 5vw, 60px) + 50px); }
+  /* the shorthand above resets every side, so re-apply the sliver edge */
+  [data-camera="left"]  .hero { padding-right:  var(--hero-sliver-pad); }
+  [data-camera="right"] .hero { padding-left:   var(--hero-sliver-pad); }
+  [data-camera="down"]  .hero { padding-top:    var(--hero-sliver-pad); }
+  [data-camera="up"]    .hero { padding-bottom: var(--hero-sliver-pad); }
 
   /* Center content sections on inner pages */
   .content { text-align: center; }

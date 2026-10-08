@@ -1,12 +1,12 @@
 /* ==========================================================================
-   Footer
+   Footer — colour tokens (--ink, --paper) come from css/style.css
    ========================================================================== */
 
 .page__footer {
   width: 100%;
   font-family: 'Josefin Sans', sans-serif;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
-  background: #fff;
+  background: var(--paper);
   margin-top: auto;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .footer__list a {
-  color: #000;
+  color: var(--ink);
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -95,9 +95,5 @@
   .footer__inner {
     padding: 32px 24px 20px;
     text-align: center;
-  }
-
-  .footer__col {
-    align-items: center;
   }
 }

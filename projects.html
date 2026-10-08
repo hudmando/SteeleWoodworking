@@ -8,113 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/transitions.css">
-<script>(function(){var sx=sessionStorage.getItem('vt-dx');if(sx===null)return;var x=parseFloat(sx),y=parseFloat(sessionStorage.getItem('vt-dy')||0);sessionStorage.removeItem('vt-dx');sessionStorage.removeItem('vt-dy');if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;var ex=-x*100,ey=-y*100;var s=document.createElement('style');s.textContent='@keyframes vt-exit{to{transform:translate('+ex+'%,'+ey+'%)}}@keyframes vt-enter{from{transform:translate('+(-ex)+'%,'+(-ey)+'%)}}@keyframes vt-sliver-enter{from{transform:translate('+ex+'%,'+ey+'%)}}';document.head.appendChild(s);document.documentElement.classList.add('vt-active');})();</script>
+<script src="js/transitions.js"></script>
 </head>
 <body data-camera="right">
 
   <a class="sliver" href="index.html" aria-label="Back to home">
-    <svg class="sliver__svg" viewBox="0 0 1000 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="g-c-tl" x1="312.5" y1="187.5" x2="0"    y2="0"   gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-c-tr" x1="687.5" y1="187.5" x2="1000" y2="0"   gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-c-bl" x1="312.5" y1="412.5" x2="0"    y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-c-br" x1="687.5" y1="412.5" x2="1000" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t1"  x1="346.59" y1="187.5" x2="90.91"  y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t2"  x1="380.68" y1="187.5" x2="181.82" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t3"  x1="414.77" y1="187.5" x2="272.73" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t4"  x1="448.86" y1="187.5" x2="363.64" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t5"  x1="482.95" y1="187.5" x2="454.55" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t6"  x1="517.05" y1="187.5" x2="545.45" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t7"  x1="551.14" y1="187.5" x2="636.36" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t8"  x1="585.23" y1="187.5" x2="727.27" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t9"  x1="619.32" y1="187.5" x2="818.18" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-t10" x1="653.41" y1="187.5" x2="909.09" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b1"  x1="346.59" y1="412.5" x2="90.91"  y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b2"  x1="380.68" y1="412.5" x2="181.82" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b3"  x1="414.77" y1="412.5" x2="272.73" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b4"  x1="448.86" y1="412.5" x2="363.64" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b5"  x1="482.95" y1="412.5" x2="454.55" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b6"  x1="517.05" y1="412.5" x2="545.45" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b7"  x1="551.14" y1="412.5" x2="636.36" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b8"  x1="585.23" y1="412.5" x2="727.27" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b9"  x1="619.32" y1="412.5" x2="818.18" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-b10" x1="653.41" y1="412.5" x2="909.09" y2="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-l1" x1="312.5" y1="219.64" x2="0" y2="85.71"  gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-l2" x1="312.5" y1="251.79" x2="0" y2="171.43" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-l3" x1="312.5" y1="283.93" x2="0" y2="257.14" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-l4" x1="312.5" y1="316.07" x2="0" y2="342.86" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-l5" x1="312.5" y1="348.21" x2="0" y2="428.57" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-l6" x1="312.5" y1="380.36" x2="0" y2="514.29" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-r1" x1="687.5" y1="219.64" x2="1000" y2="85.71"  gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-r2" x1="687.5" y1="251.79" x2="1000" y2="171.43" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-r3" x1="687.5" y1="283.93" x2="1000" y2="257.14" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-r4" x1="687.5" y1="316.07" x2="1000" y2="342.86" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-r5" x1="687.5" y1="348.21" x2="1000" y2="428.57" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="g-r6" x1="687.5" y1="380.36" x2="1000" y2="514.29" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000" stop-opacity="0.5"/><stop offset="1" stop-color="#000"/></linearGradient>
-      </defs>
-      <g stroke-width="2" fill="none">
-        <line x1="312.5" y1="187.5" x2="0"    y2="0"   stroke="url(#g-c-tl)"/>
-        <line x1="687.5" y1="187.5" x2="1000" y2="0"   stroke="url(#g-c-tr)"/>
-        <line x1="312.5" y1="412.5" x2="0"    y2="600" stroke="url(#g-c-bl)"/>
-        <line x1="687.5" y1="412.5" x2="1000" y2="600" stroke="url(#g-c-br)"/>
-        <line x1="346.59" y1="187.5" x2="90.91"  y2="0" stroke="url(#g-t1)"/>
-        <line x1="380.68" y1="187.5" x2="181.82" y2="0" stroke="url(#g-t2)"/>
-        <line x1="414.77" y1="187.5" x2="272.73" y2="0" stroke="url(#g-t3)"/>
-        <line x1="448.86" y1="187.5" x2="363.64" y2="0" stroke="url(#g-t4)"/>
-        <line x1="482.95" y1="187.5" x2="454.55" y2="0" stroke="url(#g-t5)"/>
-        <line x1="517.05" y1="187.5" x2="545.45" y2="0" stroke="url(#g-t6)"/>
-        <line x1="551.14" y1="187.5" x2="636.36" y2="0" stroke="url(#g-t7)"/>
-        <line x1="585.23" y1="187.5" x2="727.27" y2="0" stroke="url(#g-t8)"/>
-        <line x1="619.32" y1="187.5" x2="818.18" y2="0" stroke="url(#g-t9)"/>
-        <line x1="653.41" y1="187.5" x2="909.09" y2="0" stroke="url(#g-t10)"/>
-        <line x1="346.59" y1="412.5" x2="90.91"  y2="600" stroke="url(#g-b1)"/>
-        <line x1="380.68" y1="412.5" x2="181.82" y2="600" stroke="url(#g-b2)"/>
-        <line x1="414.77" y1="412.5" x2="272.73" y2="600" stroke="url(#g-b3)"/>
-        <line x1="448.86" y1="412.5" x2="363.64" y2="600" stroke="url(#g-b4)"/>
-        <line x1="482.95" y1="412.5" x2="454.55" y2="600" stroke="url(#g-b5)"/>
-        <line x1="517.05" y1="412.5" x2="545.45" y2="600" stroke="url(#g-b6)"/>
-        <line x1="551.14" y1="412.5" x2="636.36" y2="600" stroke="url(#g-b7)"/>
-        <line x1="585.23" y1="412.5" x2="727.27" y2="600" stroke="url(#g-b8)"/>
-        <line x1="619.32" y1="412.5" x2="818.18" y2="600" stroke="url(#g-b9)"/>
-        <line x1="653.41" y1="412.5" x2="909.09" y2="600" stroke="url(#g-b10)"/>
-        <line x1="312.5" y1="219.64" x2="0" y2="85.71"  stroke="url(#g-l1)"/>
-        <line x1="312.5" y1="251.79" x2="0" y2="171.43" stroke="url(#g-l2)"/>
-        <line x1="312.5" y1="283.93" x2="0" y2="257.14" stroke="url(#g-l3)"/>
-        <line x1="312.5" y1="316.07" x2="0" y2="342.86" stroke="url(#g-l4)"/>
-        <line x1="312.5" y1="348.21" x2="0" y2="428.57" stroke="url(#g-l5)"/>
-        <line x1="312.5" y1="380.36" x2="0" y2="514.29" stroke="url(#g-l6)"/>
-        <line x1="687.5" y1="219.64" x2="1000" y2="85.71"  stroke="url(#g-r1)"/>
-        <line x1="687.5" y1="251.79" x2="1000" y2="171.43" stroke="url(#g-r2)"/>
-        <line x1="687.5" y1="283.93" x2="1000" y2="257.14" stroke="url(#g-r3)"/>
-        <line x1="687.5" y1="316.07" x2="1000" y2="342.86" stroke="url(#g-r4)"/>
-        <line x1="687.5" y1="348.21" x2="1000" y2="428.57" stroke="url(#g-r5)"/>
-        <line x1="687.5" y1="380.36" x2="1000" y2="514.29" stroke="url(#g-r6)"/>
-        <line x1="312.5" y1="219.64" x2="687.5" y2="219.64" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="312.5" y1="251.79" x2="687.5" y2="251.79" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="312.5" y1="283.93" x2="687.5" y2="283.93" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="312.5" y1="316.07" x2="687.5" y2="316.07" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="312.5" y1="348.21" x2="687.5" y2="348.21" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="312.5" y1="380.36" x2="687.5" y2="380.36" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="346.59" y1="187.5" x2="346.59" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="380.68" y1="187.5" x2="380.68" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="414.77" y1="187.5" x2="414.77" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="448.86" y1="187.5" x2="448.86" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="482.95" y1="187.5" x2="482.95" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="517.05" y1="187.5" x2="517.05" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="551.14" y1="187.5" x2="551.14" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="585.23" y1="187.5" x2="585.23" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="619.32" y1="187.5" x2="619.32" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <line x1="653.41" y1="187.5" x2="653.41" y2="412.5" stroke="#000" stroke-opacity="0.50"/>
-        <rect x="312.5" y="187.5" width="375"  height="225" stroke="#000" stroke-opacity="0.50"/>
-        <rect x="250"   y="150"   width="500"  height="300" stroke="#000" stroke-opacity="0.60"/>
-        <rect x="187.5" y="112.5" width="625"  height="375" stroke="#000" stroke-opacity="0.70"/>
-        <rect x="125"   y="75"    width="750"  height="450" stroke="#000" stroke-opacity="0.80"/>
-        <rect x="62.5"  y="37.5"  width="875"  height="525" stroke="#000" stroke-opacity="0.90"/>
-        <rect x="0"     y="0"     width="1000" height="600" stroke="#000" stroke-opacity="1" stroke-width="6"/>
-      </g>
-    </svg>
+    <img class="sliver__grid" src="images/grid.svg" alt="">
   </a>
 
   <section class="hero">
@@ -134,19 +35,7 @@
       The one thing that connects these pieces is the wood. Most, if not all, of the wood comes from a lumber yard filled by years of sawyering through my father&rsquo;s tree business. It&rsquo;s a joy to create furniture out of lumber taken from the backyards of our neighborhood. Another connection is the obvious growth in skill, a development that leaves its mark on each piece. It&rsquo;s a wonder to see.
     </p>
 
-    <div class="projects-grid">
-      <button class="project-tile" data-project="0" style="background-image:url('images/maple%20couch%20table/IMG_0535%20(1).jpg')">Maple Couch Table</button>
-      <button class="project-tile" data-project="1" style="background-image:url('images/live%20edge%20walnut%20coffee%20table/IMG_0782%20(1).jpg')">Live Edge Walnut Coffee Table</button>
-      <button class="project-tile" data-project="2" style="background-image:url('images/checkered%20cutting%20boards/IMG_0852%20(1).jpg')">Checkered Cutting Boards</button>
-      <button class="project-tile" data-project="3" style="background-image:url('images/balck%20walnut%20end%20table/IMG_2553%20(1).jpg')">Black Walnut End Tables</button>
-      <button class="project-tile" data-project="4" style="background-image:url('images/axe%20art/IMG_7072%20(1).jpg')">Axe Art</button>
-      <button class="project-tile" data-project="5" style="background-image:url('images/night%20stands/IMG_3818%20(1).jpg')">Night Stands</button>
-      <button class="project-tile" data-project="6" style="background-image:url('images/washburn%20tables/IMG_4276%20(1).jpg')">Washburne Tables</button>
-      <button class="project-tile" data-project="7" style="background-image:url('images/bread%20boxes/IMG_4317%20(1).jpg')">Bread Boxes</button>
-      <button class="project-tile" data-project="8" style="background-image:url('images/tenon%20and%20mortised%20maple%20end%20table/maple%20end%20table%20(1).jpg')">Tenon and Mortised Maple End Table</button>
-      <button class="project-tile" data-project="9" style="background-image:url('images/square%20walnut%20coffee%20table/square%20walnut%20coffee%20table%20(1).jpg')">Square Walnut Coffee Table</button>
-      <button class="project-tile" data-project="10" style="background-image:url('images/walnut%20bar%20stools/walnut%20bar%20stools%20(1).jpg')">Walnut Bar Stools</button>
-    </div>
+    <div class="projects-grid" id="projectsGrid"></div>
 
     <h2 class="content__heading">Notes on the work</h2>
     <p class="content__body">
@@ -195,7 +84,7 @@
     </div>
   </footer>
 
+  <script src="js/projects-data.js"></script>
   <script src="js/projects.js"></script>
-  <script src="js/transitions.js"></script>
 </body>
 </html>
