@@ -4,7 +4,7 @@
   var PROJECTS = [
     {
       title: 'Maple Couch Table',
-      desc: 'Add a description for the Maple Couch Table here.',
+      desc: 'A long, narrow maple couch table built to sit behind a sofa. The top is glued up from boards picked so a ribbon of dark heartwood runs its full length between pale sapwood. Square legs carry a simple apron, and a low stretcher shelf ties the base together, adding storage and stiffness without visual weight.',
       photos: [
         'images/maple%20couch%20table/IMG_0535%20(1).jpg',
         'images/maple%20couch%20table/IMG_0525%20(2).jpg',
@@ -16,7 +16,7 @@
     },
     {
       title: 'Live Edge Walnut Coffee Table',
-      desc: 'Add a description for the Live Edge Walnut Coffee Table here.',
+      desc: 'A coffee table made from a single slab of walnut, cut at a long angle through the log so the growth rings stretch into ovals across the top. The natural edge and the band of pale sapwood are left intact, the surface is finished to a deep gloss, and the slab rests on a simple steel base so the wood stays the focus.',
       photos: [
         'images/live%20edge%20walnut%20coffee%20table/IMG_0782%20(1).jpg',
         'images/live%20edge%20walnut%20coffee%20table/IMG_0783%20(2).jpg'
@@ -24,7 +24,7 @@
     },
     {
       title: 'Checkered Cutting Boards',
-      desc: 'Add a description for the Checkered Cutting Boards here.',
+      desc: 'A pair of end-grain cutting boards in a checkerboard pattern of dark walnut and light maple. Each board is framed with a contrasting border and solid end caps. End grain is gentle on knife edges and wears well, and each board took several rounds of cutting, flipping and re-gluing to bring the pattern into alignment.',
       photos: [
         'images/checkered%20cutting%20boards/IMG_0852%20(1).jpg',
         'images/checkered%20cutting%20boards/IMG_1184%20(2).jpg',
@@ -35,7 +35,7 @@
     },
     {
       title: 'Black Walnut End Table',
-      desc: 'Add a description for the Black Walnut End Table here.',
+      desc: 'A compact end table made from thick black walnut, built as a solid, chunky block with the grain wrapping around its edges. A wiped-on finish brings out the figure, and slim steel hairpin legs keep the heavy top feeling light.',
       photos: [
         'images/balck%20walnut%20end%20table/IMG_2553%20(1).jpg',
         'images/balck%20walnut%20end%20table/IMG_2432%20(2).jpg',
@@ -44,7 +44,7 @@
     },
     {
       title: 'Axe Art',
-      desc: 'Add a description for the Axe Art here.',
+      desc: 'A wall piece that pairs a full-size axe with a grid of small hardwood cubes. Blanks of walnut, cherry and maple were milled square, cut into cubes, and hung in four columns from the axe handle, which rests in leather straps. The mix of species gives the piece a quiet gradient of color.',
       photos: [
         'images/axe%20art/IMG_7072%20(1).jpg',
         'images/axe%20art/IMG_4376%20(2).jpg',
@@ -55,7 +55,7 @@
     },
     {
       title: 'Night Stands',
-      desc: 'Add a description for the Night Stands here.',
+      desc: 'A pair of maple night stands built with mortise-and-tenon frames. The legs were milled from thick blanks with chamfered corners, the rails were mortised and fit, and each frame was glued up square in pipe clamps. The tops are glued-up panels with dark streaks of figure, and a low shelf gives room for books or a blanket. One stand is shown in a warm amber finish next to its unfinished partner.',
       photos: [
         'images/night%20stands/IMG_3818%20(1).jpg',
         'images/night%20stands/IMG_3800%20(2).jpg',
@@ -70,7 +70,7 @@
     },
     {
       title: 'Washburn Tables',
-      desc: 'Add a description for the Washburn Tables here.',
+      desc: 'A set of café tables for a commercial dining space. Thick hardwood was resawn and glued up into a stack of solid tops, then flattened and finished to show off the figure and natural character marks. The finished tops are mounted on black steel pedestal bases and paired with bar stools along the front windows.',
       photos: [
         'images/washburn%20tables/IMG_4276%20(1).jpg',
         'images/washburn%20tables/IMG_4278%20(2).jpg',
@@ -82,7 +82,7 @@
     },
     {
       title: 'Bread Boxes',
-      desc: 'Add a description for the Bread Boxes here.',
+      desc: 'A pair of walnut bread boxes with roll-top tambour doors. Each case is solid walnut chosen for its figure, and the doors are made of lighter hardwood slats that slide up and back into the case. They\'re meant to sit on a counter and get used every day.',
       photos: [
         'images/bread%20boxes/IMG_4317%20(1).jpg',
         'images/bread%20boxes/IMG_2222%20(2).jpg',
