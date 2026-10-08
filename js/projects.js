@@ -107,6 +107,15 @@
       positions: ['center 55%', 'center 45%', 'center 55%', 'center 45%', null, null, null, null, null]
     },
     {
+      title: 'Black Walnut Slab Coffee Table',
+      desc: 'A low coffee table made from a single live-edge slab of black walnut on slim black hairpin legs. Both long edges keep their natural curve, and the slab\'s cool notches and open checks are left as they came from the tree. A clear finish deepens the walnut and lets the grain carry the piece.',
+      photos: [
+        'images/black%20walnut%20slab%20coffee%20table/black%20walnut%20slab%20coffee%20table%20(1).jpg',
+        'images/black%20walnut%20slab%20coffee%20table/black%20walnut%20slab%20coffee%20table%20(2).jpg',
+        'images/black%20walnut%20slab%20coffee%20table/black%20walnut%20slab%20coffee%20table%20(3).jpg'
+      ]
+    },
+    {
       title: 'Walnut Bar Stools',
       desc: 'A set of walnut bar stools, currently in progress, modeled after the stools of KOMA, the Japanese furniture maker. Each frame is built entirely with mortise-and-tenon joinery. The legs are coved along their inside faces, and the aprons sweep down into shaped shoulders where they meet the legs. The parts were milled and fit with Japanese chisels and hand planes, then glued up one stool at a time.',
       photos: [
