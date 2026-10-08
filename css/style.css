@@ -295,6 +295,14 @@ body {
   margin-top: 2rem;
 }
 
+/* desktop: grid breaks out of the text column, 15% wider, centered */
+@media (min-width: 641px) {
+  .projects-grid {
+    width: 115%;
+    margin-left: -7.5%;
+  }
+}
+
 .project-tile {
   aspect-ratio: 4 / 3;
   border-radius: 4px;
