@@ -29,13 +29,21 @@ html.vt-active::view-transition-new(root) {
   animation: vt-enter 750ms cubic-bezier(0.65, 0, 0.2, 1) both;
 }
 
-/* Sliver is captured independently so it can enter from its own edge */
-.sliver {
-  view-transition-name: sliver;
-}
+/* Sliver is captured independently so it can enter from its own edge.
+   Each edge gets its own name: every page sits on a different edge, so a
+   shared name would pair the departing and arriving slivers and the
+   browser's default group animation would morph one edge strip into the
+   other (e.g. Projects' left strip stretching into Create's top strip).
+   Distinct names keep the old sliver exit-only and the new one enter-only. */
+[data-camera="left"]  .sliver { view-transition-name: sliver-left; }
+[data-camera="right"] .sliver { view-transition-name: sliver-right; }
+[data-camera="down"]  .sliver { view-transition-name: sliver-down; }
+[data-camera="up"]    .sliver { view-transition-name: sliver-up; }
 
-::view-transition-old(sliver),
-::view-transition-new(sliver) {
+::view-transition-old(sliver-left),  ::view-transition-new(sliver-left),
+::view-transition-old(sliver-right), ::view-transition-new(sliver-right),
+::view-transition-old(sliver-down),  ::view-transition-new(sliver-down),
+::view-transition-old(sliver-up),    ::view-transition-new(sliver-up) {
   animation: none;
   mix-blend-mode: normal;
 }
@@ -43,11 +51,17 @@ html.vt-active::view-transition-new(root) {
 @keyframes vt-sliver-exit { to { opacity: 0; } }
 
 /* Sliver fades out quickly before the page slides away */
-html.vt-active::view-transition-old(sliver) {
+html.vt-active::view-transition-old(sliver-left),
+html.vt-active::view-transition-old(sliver-right),
+html.vt-active::view-transition-old(sliver-down),
+html.vt-active::view-transition-old(sliver-up) {
   animation: vt-sliver-exit 180ms ease both;
 }
 
 /* Sliver enters from its edge after the main page has settled */
-html.vt-active::view-transition-new(sliver) {
+html.vt-active::view-transition-new(sliver-left),
+html.vt-active::view-transition-new(sliver-right),
+html.vt-active::view-transition-new(sliver-down),
+html.vt-active::view-transition-new(sliver-up) {
   animation: vt-sliver-enter 500ms cubic-bezier(0.65, 0, 0.2, 1) 400ms both;
 }
