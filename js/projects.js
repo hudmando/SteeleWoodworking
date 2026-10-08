@@ -34,7 +34,7 @@
       positions: [null, 'center 35%', null, null]
     },
     {
-      title: 'Black Walnut End Table',
+      title: 'Black Walnut End Tables',
       desc: 'Two end tables cut from the same original slab of black walnut, so their grain and color carry from one to the other. Each is built as a thick, solid block on slim steel legs. Both now live in the downtown Washburne Café.',
       photos: [
         'images/balck%20walnut%20end%20table/IMG_2553%20(1).jpg',
@@ -55,7 +55,7 @@
     },
     {
       title: 'Night Stands',
-      desc: 'A pair of maple night stands with tapered legs. A 45-degree angle profile repeats through the whole piece as part of the design. The tops were chosen for the ribbons of heartwood running through them, the favorite detail on both stands. A low shelf gives room for books or a blanket.',
+      desc: 'A pair of maple night stands with tapered legs. A 45-degree angle profile repeats through the whole piece as part of the design. The tops were chosen for the ribbons of heartwood running through them, the favorite detail on both stands.',
       photos: [
         'images/night%20stands/IMG_3818%20(1).jpg',
         'images/night%20stands/IMG_3800%20(2).jpg',
@@ -69,7 +69,7 @@
       ]
     },
     {
-      title: 'Washburn Tables',
+      title: 'Washburne Tables',
       desc: 'Six maple tables, all the same size but each one unique, made for the Thurston Life Foundation at the Washburne Café. The wood was salvaged from maple trees burned in the Holiday Farm Fire in Oregon, and the tops keep the character marks that history left in the grain.',
       photos: [
         'images/washburn%20tables/IMG_4276%20(1).jpg',
