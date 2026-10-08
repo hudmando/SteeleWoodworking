@@ -295,11 +295,13 @@ body {
   margin-top: 2rem;
 }
 
-/* desktop: grid breaks out of the text column, 15% wider, centered */
+/* desktop: grid breaks out of the text column and stretches with the
+   window, stopping short of the sliver; text column keeps its width */
 @media (min-width: 641px) {
   .projects-grid {
-    width: 115%;
-    margin-left: -7.5%;
+    --grid-w: min(1100px, calc(100vw - 2 * (clamp(24px, 5vw, 60px) + 90px)));
+    width: var(--grid-w);
+    margin-left: calc((100% - var(--grid-w)) / 2);
   }
 }
 
